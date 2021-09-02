@@ -31,7 +31,7 @@ function select_opeation(){
           nl.close();
       }
       else if(operation<6 || operation>0){
-
+          input_num2();
       }
       else{
           console.log('Выбрана неверная операция');
@@ -39,3 +39,27 @@ function select_opeation(){
       }
   });
 }
+
+function input_num2(){
+  nl.question('Введите второе значение: ', function (argument) {
+      num2 = parseFloat(argument);
+      if(operation==1){
+          num1 = num1 + num2;
+      }
+       else if(operation==2){
+           num1 = num1 - num2;
+      }
+      else if(operation==3){
+          num1 = num1 * num2;
+      }
+      else if(operation==4){
+          num1 = num1 / num2;
+      }
+      else if(operation==5){
+          num1 = num1 *-1;
+      }
+      console.log("Результат: ", num1);
+      select_opeation();
+  });
+}
+input_num1();
